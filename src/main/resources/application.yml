@@ -7,13 +7,13 @@ server:
   port: 521
   connection-timeout: 5000ms
   servlet:
-    context-path: /saas-manage-service
+    context-path: /saas-iot-service
 
 spring:
   freemarker:
     check-template-location: false
   application:
-    name: saas-manage-service
+    name: saas-iot-service
   # 环境 dev|test|prod
   profiles:
     active: dev
@@ -29,19 +29,19 @@ spring:
       max-file-size: 10GB
       max-request-size: 10GB
       enabled: true
-  redis:
-    open: true  # 是否开启redis缓存  true开启   false关闭
-    database: 0
-    host: 47.109.49.39
-    port: 6379
-    password: WJY20011219    # 密码（默认为空）
-    timeout: 6000ms  # 连接超时时长（毫秒）
-    jedis:
-      pool:
-        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
-        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
-        max-idle: 10      # 连接池中的最大空闲连接
-        min-idle: 5       # 连接池中的最小空闲连接
+#  redis:
+#    open: true  # 是否开启redis缓存  true开启   false关闭
+#    database: 0
+#    host: 47.109.49.39
+#    port: 6379
+#    password: WJY20011219    # 密码（默认为空）
+#    timeout: 6000ms  # 连接超时时长（毫秒）
+#    jedis:
+#      pool:
+#        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+#        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#        max-idle: 10      # 连接池中的最大空闲连接
+#        min-idle: 5       # 连接池中的最小空闲连接
   mvc:
     throw-exception-if-no-handler-found: true
 #  resources:

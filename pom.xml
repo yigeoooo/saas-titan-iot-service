@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.saas.titan</groupId>
-    <artifactId>saas-titan-web-manage</artifactId>
+    <artifactId>saas-titan-iot-service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
