@@ -3,6 +3,7 @@ package com.saas.titan.modules.resource.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.saas.titan.modules.resource.dto.CaseContentDto;
+import com.saas.titan.modules.resource.dto.CaseContentInfoDto;
 import com.saas.titan.modules.resource.entity.CaseContentEntity;
 import com.saas.titan.modules.resource.vo.CaseContentAddVo;
 import com.saas.titan.modules.resource.vo.CaseContentVo;
@@ -21,10 +22,16 @@ public interface CaseContentService extends IService<CaseContentEntity> {
 
     /**
      * 分页查询content
-     * @param vo 接参对象
      * @return page对象
      */
     List<CaseContentDto> page();
+
+    /**
+     * 查询详情
+     * @param resourceId 资源id
+     * @return CaseContentInfoDto
+     */
+    CaseContentInfoDto getInfo(String resourceId);
 
 }
 

@@ -16,4 +16,15 @@
         ${ew.customSqlSegment}
     </select>
 
+    <select id="geInfo" resultType="com.saas.titan.modules.resource.dto.CaseContentInfoDto">
+        select
+            cc.title,
+            cc.author,
+            cc.content
+        from common_resource cr
+                 inner join case_content cc
+                            on cr.resource_id = cc.resource_id
+        where cc.resource_id = #{resourceId}
+    </select>
+
 </mapper>

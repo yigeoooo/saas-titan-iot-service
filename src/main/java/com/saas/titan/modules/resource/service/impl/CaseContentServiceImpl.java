@@ -7,6 +7,7 @@ import com.saas.titan.common.constant.Constant;
 import com.saas.titan.common.tableField.TableField;
 import com.saas.titan.modules.resource.dao.CaseContentDao;
 import com.saas.titan.modules.resource.dto.CaseContentDto;
+import com.saas.titan.modules.resource.dto.CaseContentInfoDto;
 import com.saas.titan.modules.resource.entity.CaseContentEntity;
 import com.saas.titan.modules.resource.service.CaseContentService;
 import com.saas.titan.modules.resource.vo.CaseContentVo;
@@ -30,5 +31,10 @@ public class CaseContentServiceImpl extends ServiceImpl<CaseContentDao, CaseCont
         QueryWrapper<CaseContentEntity> query = new QueryWrapper<>();
         query.eq(TableField.CommonResource.IS_DELETED, Constant.STR_ZERO);
         return caseContentDao.getPage(query);
+    }
+
+    @Override
+    public CaseContentInfoDto getInfo(String resourceId) {
+        return caseContentDao.geInfo(resourceId);
     }
 }

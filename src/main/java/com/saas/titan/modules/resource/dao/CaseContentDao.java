@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.saas.titan.modules.resource.dto.CaseContentDto;
+import com.saas.titan.modules.resource.dto.CaseContentInfoDto;
 import com.saas.titan.modules.resource.entity.CaseContentEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -25,5 +26,7 @@ import java.util.List;
 public interface CaseContentDao extends BaseMapper<CaseContentEntity> {
 
     List<CaseContentDto> getPage(@Param("ew")QueryWrapper<CaseContentEntity> ew);
+
+    CaseContentInfoDto geInfo(@Param("resourceId") String resourceId);
 
 }
